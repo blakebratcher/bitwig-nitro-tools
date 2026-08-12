@@ -124,9 +124,10 @@ license.
 ## Running nitro-extract-keys
 
 Because both keys live only in a running JVM, recovery goes through a small
-Bitwig **controller extension** that this project bundles:
-`controller/BitwigNitroKeyDump.control.js`. You install it, add it once in
-Bitwig, let it write the key out, and the CLI reads that dump and writes your
+Bitwig **controller extension** that this project bundles as package data
+(`BitwigNitroKeyDump.control.js`; its source lives at
+`src/bitwig_nitro/data/` in the repo). You install it, add it once in Bitwig,
+let it write the key out, and the CLI reads that dump and writes your
 `keys.json`:
 
 ```bash

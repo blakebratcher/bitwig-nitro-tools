@@ -51,7 +51,7 @@ package-dir = { "" = "src" }
 where = ["src"]
 
 [tool.setuptools.package-data]
-bitwig_nitro = ["data/*.json"]
+bitwig_nitro = ["data/*.json", "data/*.control.js"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

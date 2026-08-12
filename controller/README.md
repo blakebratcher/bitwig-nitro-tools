@@ -57,12 +57,16 @@ extraction exactly once, at load.
 1. Find your Bitwig **Controller Scripts** directory:
    - Linux: `~/Bitwig Studio/Controller Scripts/`
    - macOS / Windows: `~/Documents/Bitwig Studio/Controller Scripts/`
-2. Copy `BitwigNitroKeyDump.control.js` into it. You can do this by hand, or let
-   the CLI place it for you:
+2. Let the CLI place the bundled script there for you (it ships inside the
+   `bitwig_nitro` package, so this works from a wheel or a source checkout):
 
    ```bash
    nitro-extract-keys --install-controller
    ```
+
+   To copy it by hand instead, the script is at
+   `src/bitwig_nitro/data/BitwigNitroKeyDump.control.js` in the repo (or in the
+   installed package's `data/` directory).
 
 ## Enable and run
 
@@ -91,11 +95,13 @@ local and out of version control, exactly like `keys.json`.
 
 ## Honest status
 
-This controller is built and reviewed against Bitwig 6.0.x, where the private
-prototype it was ported from recovered the cipher chain by shape (no obfuscated
-name is hardcoded, so it is meant to survive per-release renames). Whether it
-recovers a clean key on **your** specific build is the step for you to confirm:
-enable it, check the popup, and run `nitro-extract-keys --live` — a valid key
-decrypts and parses a module cleanly, and the CLI tells you whether validation
-passed. If the dump comes back `status: "error"`, the roster in `message` is the
-starting point for adapting the shape-match to your build.
+The reflection sequence this controller uses is verified **live on Bitwig
+6.0.11**: driven through the same calls, it recovers the correct nitro-image key
+(confirmed by decrypting a real module with it). It matches the cipher chain by
+shape, with no obfuscated name hardcoded, so it is meant to survive per-release
+renames. What is still yours to confirm is that this standalone controller
+*loads and runs* inside your Bitwig — enable it, check the popup, and run
+`nitro-extract-keys --live`. A valid key decrypts and parses a module cleanly,
+and the CLI tells you whether validation passed. If the dump comes back
+`status: "error"`, the roster in `message` is the starting point for adapting
+the shape-match to your build.

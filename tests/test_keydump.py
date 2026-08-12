@@ -364,17 +364,22 @@ def test_cli_manual_image_only(tmp_path, capsys) -> None:
     assert doc == {"nitro_image_key": FAKE_KEY.hex()}
 
 
+def test_bundled_controller_is_packaged() -> None:
+    """The controller ships as package data and is a real controller script."""
+    p = extract_keys.bundled_controller_path()
+    assert p.is_file(), f"bundled controller missing at {p}"
+    # It lives under the package's data dir, not a repo-root-only path.
+    assert p.parent.name == "data" and p.parent.parent.name == "bitwig_nitro"
+    assert "defineController" in p.read_text()
+
+
 def test_cli_install_controller(tmp_path, capsys) -> None:
     """--install-controller copies the bundled script into --controllers-dir."""
     dest_dir = tmp_path / "Controller Scripts"
     rc = extract_keys.main(
         ["--install-controller", "--controllers-dir", str(dest_dir)]
     )
-    # The bundled controller ships in the repo checkout; if absent this returns
-    # 1. In a source tree it must succeed and place the file.
-    if rc == 0:
-        assert (dest_dir / extract_keys.CONTROLLER_FILENAME).is_file()
-        assert "Installed controller" in capsys.readouterr().out
-    else:
-        assert rc == 1
-        assert "bundled controller not found" in capsys.readouterr().err
+    # The controller ships as package data, so this always resolves and copies.
+    assert rc == 0
+    assert (dest_dir / extract_keys.CONTROLLER_FILENAME).is_file()
+    assert "Installed controller" in capsys.readouterr().out

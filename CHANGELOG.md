@@ -9,8 +9,9 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Added
 
 - **Runtime key extraction via a bundled controller.** `nitro-extract-keys
-  --install-controller` copies `controller/BitwigNitroKeyDump.control.js` into
-  Bitwig's Controller Scripts directory (override with `--controllers-dir`).
+  --install-controller` copies the bundled `BitwigNitroKeyDump.control.js`
+  controller (shipped as package data) into Bitwig's Controller Scripts
+  directory (override with `--controllers-dir`).
   Loading it in Bitwig reflects over the running engine and writes a key dump to
   `~/.bitwig-nitro/nitro-key-dump.json` (override with `BITWIG_NITRO_KEYDUMP`).
   `nitro-extract-keys --live` reads that dump, selects and — against an

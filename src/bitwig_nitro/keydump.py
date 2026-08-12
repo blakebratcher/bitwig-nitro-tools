@@ -4,7 +4,7 @@ Static recovery of the nitro-image key is impossible: on current Bitwig the
 99-byte key is materialized purely at runtime and appears nowhere in the
 shipped jars (raw / hex / base64) or native binaries. The only proven recovery
 is reading it out of a *running* Bitwig JVM with a controller extension. The
-bundled controller (``controller/BitwigNitroKeyDump.control.js``) dumps the
+bundled controller (``BitwigNitroKeyDump.control.js``) dumps the
 cipher chain's byte / small-int fields to a JSON file on your own disk; this
 module reads that file and picks the key out of it.
 

@@ -48,12 +48,12 @@ CONTROLLER_FILENAME = "BitwigNitroKeyDump.control.js"
 
 
 def bundled_controller_path() -> Path:
-    """Locate the bundled controller by a repo-relative path from this module.
+    """Locate the bundled controller, shipped as package data.
 
-    ``src/bitwig_nitro/cli/extract_keys.py`` -> ``<repo>/controller/<name>``.
+    Resolves to ``bitwig_nitro/data/<name>`` for wheel and editable/source
+    installs alike (the package's data directory is on disk in either case).
     """
-    repo_root = Path(__file__).resolve().parents[3]
-    return repo_root / "controller" / CONTROLLER_FILENAME
+    return Path(__file__).resolve().parent.parent / "data" / CONTROLLER_FILENAME
 
 
 def _print_live_next_steps(stream=sys.stderr) -> None:
@@ -74,8 +74,8 @@ def _install_controller(args: argparse.Namespace) -> int:
     src = bundled_controller_path()
     if not src.is_file():
         print(
-            f"error: bundled controller not found at {src}. Run --install-"
-            "controller from a source checkout of the repository.",
+            f"error: bundled controller not found at {src}. Reinstall the "
+            "package; the controller ships as package data.",
             file=sys.stderr,
         )
         return 1
