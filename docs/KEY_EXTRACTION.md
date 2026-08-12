@@ -84,8 +84,15 @@ Once you have the two keys as hex strings, put them in a `keys.json`:
 1. an environment variable holding a hex string:
    `BITWIG_NITRO_DAG_KEY` or `BITWIG_NITRO_IMAGE_KEY` (a direct override);
 2. a `keys.json`, located via `BITWIG_NITRO_KEYS` (a full path), then
-   `./keys.json` in the current directory, then
-   `~/.config/bitwig-nitro/keys.json`.
+   `./keys.json` in the current directory, then `keys.json` in the per-user
+   config directory, then `~/.config/bitwig-nitro/keys.json` as a portable
+   fallback.
+
+The per-user config directory follows the platform convention:
+`%APPDATA%\bitwig-nitro` on Windows, `$XDG_CONFIG_HOME/bitwig-nitro` where
+that variable is set, and `~/.config/bitwig-nitro` everywhere else. Set
+`BITWIG_NITRO_CONFIG` to a directory to override it; the `keys.json` lookup
+and `write_keys_file` then use that directory instead.
 
 If neither source provides the requested key, `resolve_dag_key()` /
 `resolve_nitro_image_key()` raise `MissingKeyError` with a message naming the
@@ -96,7 +103,7 @@ You can write the file programmatically once you have the hex:
 ```python
 from bitwig_nitro import write_keys_file
 write_keys_file(dag_key_hex="...", image_key_hex="...")
-# -> ~/.config/bitwig-nitro/keys.json  (validates the hex before writing)
+# -> keys.json in the per-user config dir  (validates the hex before writing)
 ```
 
 Keep `keys.json` out of version control. It is your key material, tied to your

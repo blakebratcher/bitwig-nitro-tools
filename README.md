@@ -59,7 +59,10 @@ nitro-decompile filter/SallenKey
 ```
 
 Extracting keys is the one step that needs setup, because the keys live in your
-Bitwig install and this project ships none. See
+Bitwig install and this project ships none. `nitro-extract-keys` writes
+`keys.json` to your per-user config directory (`%APPDATA%\bitwig-nitro` on
+Windows, `$XDG_CONFIG_HOME/bitwig-nitro` or `~/.config/bitwig-nitro`
+elsewhere); set `BITWIG_NITRO_CONFIG` to use a different directory. See
 [docs/KEY_EXTRACTION.md](docs/KEY_EXTRACTION.md).
 
 From Python, the same read path without writing anything to disk:

@@ -11,8 +11,8 @@ Resolution order for each key (:func:`resolve_dag_key`,
      (``BITWIG_NITRO_DAG_KEY`` / ``BITWIG_NITRO_IMAGE_KEY``);
   2. a ``keys.json`` file, located via :func:`bitwig_nitro.paths.keys_search_paths`:
      ``$BITWIG_NITRO_KEYS``, then ``./keys.json``, then the per-user config
-     directory (``%APPDATA%\\bitwig-nitro`` on Windows, otherwise
-     ``~/.config/bitwig-nitro``).
+     directory (``$BITWIG_NITRO_CONFIG`` when set, else ``%APPDATA%\\bitwig-nitro``
+     on Windows, otherwise ``$XDG_CONFIG_HOME`` or ``~/.config/bitwig-nitro``).
 
 ``keys.json`` schema::
 

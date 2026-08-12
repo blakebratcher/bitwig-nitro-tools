@@ -24,6 +24,7 @@ export BITWIG_NITRO_LIBRARY=/path/to/Bitwig/Library   # dir containing nitro-ima
 # or, to name the archive directly:
 export BITWIG_NITRO_IMAGE=/path/to/nitro-image
 export BITWIG_NITRO_OUT=/path/to/output               # default: current dir
+export BITWIG_NITRO_CONFIG=/path/to/config/dir        # where keys.json lives (default: per-OS config dir)
 ```
 
 ## 1. Get your keys

@@ -33,7 +33,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--out",
         help="destination keys.json (default: keys.json in your per-user "
-        "config dir: the APPDATA folder on Windows, otherwise "
+        "config dir: $BITWIG_NITRO_CONFIG when set, else the APPDATA folder "
+        "on Windows, otherwise $XDG_CONFIG_HOME/bitwig-nitro or "
         "~/.config/bitwig-nitro)",
     )
     parser.add_argument(
