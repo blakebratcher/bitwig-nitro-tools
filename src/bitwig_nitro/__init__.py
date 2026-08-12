@@ -22,6 +22,17 @@ from .keys import (
     write_keys_file,
 )
 
+# keydump
+from .keydump import (
+    DEFAULT_DUMP_PATH,
+    KeyDumpResult,
+    Transform,
+    default_dump_path,
+    parse_dump,
+    select_image_key,
+    validate_image_key,
+)
+
 # paths
 from .paths import (
     bitwig_install_roots,
@@ -112,6 +123,14 @@ __all__ = [
     "resolve_dag_key",
     "resolve_nitro_image_key",
     "write_keys_file",
+    # keydump
+    "DEFAULT_DUMP_PATH",
+    "default_dump_path",
+    "parse_dump",
+    "select_image_key",
+    "validate_image_key",
+    "KeyDumpResult",
+    "Transform",
     # paths
     "packaged_data_dir",
     "bitwig_install_roots",

@@ -109,35 +109,48 @@ def resolve_nitro_image_key() -> bytes:
 
 
 def write_keys_file(
-    dag_key_hex: str,
-    image_key_hex: str,
+    dag_key_hex: str | None = None,
+    image_key_hex: str | None = None,
     path: str | Path | None = None,
 ) -> Path:
-    """Write a ``keys.json`` with the given hex keys.
+    """Write a ``keys.json`` with whichever hex keys are provided.
+
+    At least one of ``dag_key_hex`` / ``image_key_hex`` must be given; the
+    live extractor writes only the nitro-image key it recovered, while the
+    manual path may supply either or both. Only the fields provided are
+    written, and each is hex-validated before anything is persisted.
 
     Args:
-        dag_key_hex: Dag cipher key as a hex string.
-        image_key_hex: nitro-image key as a hex string.
+        dag_key_hex: Dag cipher key as a hex string, or ``None`` to omit it.
+        image_key_hex: nitro-image key as a hex string, or ``None`` to omit it.
         path: Destination file. Defaults to ``keys.json`` in the per-user config
             directory (see :func:`bitwig_nitro.paths.user_config_dir`).
 
     Returns:
         The path written.
+
+    Raises:
+        MissingKeyError: when both keys are ``None`` or a provided key is not
+            valid hex.
     """
+    if dag_key_hex is None and image_key_hex is None:
+        raise MissingKeyError(
+            "write_keys_file needs at least one of dag_key_hex / image_key_hex"
+        )
+
     # Validate before writing so a malformed hex string can't be persisted.
-    _decode_hex(dag_key_hex, "dag_key_hex argument")
-    _decode_hex(image_key_hex, "image_key_hex argument")
+    doc: dict[str, str] = {}
+    if dag_key_hex is not None:
+        _decode_hex(dag_key_hex, "dag_key_hex argument")
+        doc[_DAG_FIELD] = dag_key_hex.strip()
+    if image_key_hex is not None:
+        _decode_hex(image_key_hex, "image_key_hex argument")
+        doc[_IMAGE_FIELD] = image_key_hex.strip()
 
     if path is not None:
         dest = Path(path)
     else:
         dest = paths.user_config_dir() / "keys.json"
     dest.parent.mkdir(parents=True, exist_ok=True)
-    dest.write_text(
-        json.dumps(
-            {_DAG_FIELD: dag_key_hex.strip(), _IMAGE_FIELD: image_key_hex.strip()},
-            indent=2,
-        )
-        + "\n"
-    )
+    dest.write_text(json.dumps(doc, indent=2) + "\n")
     return dest

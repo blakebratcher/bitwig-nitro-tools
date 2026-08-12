@@ -48,8 +48,12 @@ does not get you).
 ```bash
 pip install -e .
 
-# 1. save the keys you extracted from your own install (see docs/KEY_EXTRACTION.md)
-nitro-extract-keys --dag-key <hex> --image-key <hex>
+# 1. recover your nitro-image key from your own install, via the bundled
+#    controller (see docs/KEY_EXTRACTION.md):
+nitro-extract-keys --install-controller   # copy the controller into Bitwig
+#    then add "Nitro Key Dump" in Bitwig -> Settings -> Controllers, and:
+nitro-extract-keys --live                 # read its dump, write keys.json
+#    (already have the hex? nitro-extract-keys --image-key <hex>)
 
 # 2. decrypt every module from your install's nitro-image
 nitro-decrypt-corpus
@@ -156,10 +160,15 @@ A few things that surfaced while reverse-engineering the format:
   prove Bitwig's loader would accept a *modified* module. That is a separate,
   live, untested question. See
   [docs/NITRO_LOAD_MECHANISM.md](docs/NITRO_LOAD_MECHANISM.md).
-- **Automated key extraction is best-effort.** The nitro-image key is usually
-  recoverable automatically; the Dag key (used for `0004` document files) is
-  materialized at runtime and may need the manual/semi-automated path. Manual
-  extraction is the documented, reliable route.
+- **Key extraction runs against your own install, not this repo.** Both keys are
+  materialized at runtime — neither appears anywhere in Bitwig's jars, in any
+  encoding — so there is no static or offline key recovery. Recovery goes
+  through a small controller extension this project bundles: you install it, add
+  it once in Bitwig, and it dumps the key for the CLI to pick up
+  (`nitro-extract-keys --install-controller`, then `--live`). That live step
+  loads inside your own licensed Bitwig and is yours to run and confirm; the Dag
+  key (for `0004` documents) is entered manually. See
+  [docs/KEY_EXTRACTION.md](docs/KEY_EXTRACTION.md).
 - **Repacked-image loader acceptance is unproven.** Repacking the archive is
   byte-exact offline, but whether Bitwig loads your repack is one restart-gated
   experiment that this project does not perform for you. Keep a verified backup

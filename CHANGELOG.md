@@ -6,6 +6,35 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+- **Runtime key extraction via a bundled controller.** `nitro-extract-keys
+  --install-controller` copies `controller/BitwigNitroKeyDump.control.js` into
+  Bitwig's Controller Scripts directory (override with `--controllers-dir`).
+  Loading it in Bitwig reflects over the running engine and writes a key dump to
+  `~/.bitwig-nitro/nitro-key-dump.json` (override with `BITWIG_NITRO_KEYDUMP`).
+  `nitro-extract-keys --live` reads that dump, selects and — against an
+  installed `nitro-image` — validates the nitro-image key, then writes
+  `keys.json` (`--image` points at a specific image; `--force` writes despite a
+  failed validation).
+
+### Changed
+
+- **Corrected the key-recovery docs.** `docs/KEY_EXTRACTION.md` and the README
+  previously implied the nitro-image key was statically recoverable from a
+  transform-chain definition in `bitwig.jar`. Verified false: neither the
+  nitro-image key nor the Dag key appears in `bitwig.jar`, `libs.jar`, or
+  `lwjgl.jar` in any form (raw, hex, or base64), nor in the native binaries —
+  both are materialized only at runtime, so static jar recovery is impossible.
+  The docs now describe the bundled-controller flow as the proven route, label
+  live verification as the user's own step, and keep the transform-chain
+  disassembly only as structure-only background.
+
+### Removed
+
+- Dropped the `--from-jar` flag from `nitro-extract-keys`; it advertised a
+  static-recovery path that does not exist.
+
 ## [0.1.0] - 2026-08-12
 
 Initial public release. A standard-library-only toolchain for working with

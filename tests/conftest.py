@@ -55,5 +55,6 @@ def _clear_key_env(monkeypatch):
         "BITWIG_NITRO_DAG_KEY",
         "BITWIG_NITRO_IMAGE_KEY",
         "BITWIG_NITRO_KEYS",
+        "BITWIG_NITRO_KEYDUMP",
     ):
         monkeypatch.delenv(var, raising=False)

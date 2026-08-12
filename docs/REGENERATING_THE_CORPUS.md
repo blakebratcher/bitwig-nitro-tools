@@ -29,15 +29,19 @@ export BITWIG_NITRO_CONFIG=/path/to/config/dir        # where keys.json lives (d
 
 ## 1. Get your keys
 
+The nitro-image key is materialized at runtime, so recovery means reading it out
+of a running Bitwig via the bundled controller — there is no static or offline
+key recovery (see [KEY_EXTRACTION.md](KEY_EXTRACTION.md) for why):
+
 ```bash
-nitro-extract-keys
+nitro-extract-keys --install-controller   # copies the controller into Bitwig's Controller Scripts dir
+# then, in Bitwig: Settings > Controllers > Add > "Nitro Key Dump"
+nitro-extract-keys --live                  # reads what the controller dumped, writes keys.json
 ```
 
-Best-effort automated recovery into a `keys.json`. If it cannot recover a key
-(the Dag key in particular may not be statically recoverable), it says so and
-you follow the manual path in [KEY_EXTRACTION.md](KEY_EXTRACTION.md). You only
-need the `nitro_image_key` for the corpus; the `dag_key` is for `0004` document
-files and is not required here.
+You only need the `nitro_image_key` for the corpus; the `dag_key` is for `0004`
+document files and is not required here. If you already have the key by another
+route, supply it directly with `nitro-extract-keys --image-key <hex>`.
 
 Confirm resolution before going further:
 

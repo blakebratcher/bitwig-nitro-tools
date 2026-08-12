@@ -17,6 +17,7 @@ not they exist so callers can construct and report them.
 from __future__ import annotations
 
 import os
+import sys
 from importlib import resources
 from pathlib import Path
 
@@ -27,12 +28,14 @@ __all__ = [
     "user_config_dir",
     "keys_search_paths",
     "local_output_dir",
+    "bitwig_controller_scripts_dir",
 ]
 
 NITRO_IMAGE_FILENAME = "nitro-image"
 """Bitwig's DSP archive filename, found under ``<root>/nitro-image``."""
 
 _ON_WINDOWS = os.name == "nt"
+_ON_MACOS = sys.platform == "darwin"
 
 
 def packaged_data_dir() -> Path:
@@ -181,3 +184,23 @@ def local_output_dir() -> Path:
     """
     override = os.environ.get("BITWIG_NITRO_OUT", "")
     return Path(override) if override else Path.cwd()
+
+
+def bitwig_controller_scripts_dir(override: str | os.PathLike | None = None) -> Path:
+    """Return Bitwig's user *Controller Scripts* directory for this platform.
+
+    This is where a user-installed controller extension lives:
+
+      * **Linux**: ``~/Bitwig Studio/Controller Scripts``
+      * **macOS / Windows**: ``~/Documents/Bitwig Studio/Controller Scripts``
+
+    ``override`` (a directory path) wins when given, so a caller can point the
+    install at a non-default location. The path is returned whether or not it
+    exists; the caller creates it.
+    """
+    if override:
+        return Path(override)
+    home = Path.home()
+    if _ON_WINDOWS or _ON_MACOS:
+        return home / "Documents" / "Bitwig Studio" / "Controller Scripts"
+    return home / "Bitwig Studio" / "Controller Scripts"
