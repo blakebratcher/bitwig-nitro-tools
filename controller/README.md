@@ -73,8 +73,14 @@ extraction exactly once, at load.
 1. In Bitwig: **Settings → Controllers → Add Controller**.
 2. Choose vendor **bitwig-nitro-tools**, product **Nitro Key Dump**, and add it.
    (You can also use **Detect available controllers**.)
+
+   ![Add Controller: vendor bitwig-nitro-tools, product Nitro Key Dump](../assets/add-controller.png)
+
 3. On add/enable, `init()` runs immediately. Watch for the popup:
-   `Nitro key dump written to …`.
+   `Nitro key dump written to …`. The controller then appears in your list:
+
+   ![The added, active Nitro Key Dump controller entry](../assets/controller-added.png)
+
 4. Hand the dump to the Python side:
 
    ```bash

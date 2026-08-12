@@ -62,6 +62,8 @@ nitro-decrypt-corpus
 nitro-decompile filter/SallenKey
 ```
 
+![Adding the bundled "Nitro Key Dump" controller in Bitwig's Settings → Controllers: pick vendor bitwig-nitro-tools, product Nitro Key Dump, and Add](assets/add-controller.png)
+
 Extracting keys is the one step that needs setup, because the keys live in your
 Bitwig install and this project ships none. `nitro-extract-keys` writes
 `keys.json` to your per-user config directory (`%APPDATA%\bitwig-nitro` on
