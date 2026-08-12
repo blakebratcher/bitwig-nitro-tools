@@ -17,7 +17,9 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   `nitro-extract-keys --live` reads that dump, selects and — against an
   installed `nitro-image` — validates the nitro-image key, then writes
   `keys.json` (`--image` points at a specific image; `--force` writes despite a
-  failed validation).
+  failed validation). Verified end-to-end on Bitwig 6.0.11: the controller loads
+  and dumps the cipher chain (with IV sizes), and `--live` selects the key by IV
+  size `198` and validates it against the installed nitro-image.
 
 ### Changed
 
