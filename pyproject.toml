@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bitwig-nitro-tools"
+version = "0.1.0"
+description = "Offline tools and format specs for reading, decompiling, and repacking Bitwig's Nitro DSP binary format."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Blake Bratcher" }]
+keywords = ["bitwig", "nitro", "dsp", "reverse-engineering", "decompiler", "binary-format"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Multimedia :: Sound/Audio",
+    "Topic :: Software Development :: Disassemblers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+# Runtime is the Python standard library only, no third-party dependencies.
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.urls]
+Homepage = "https://github.com/blakebratcher/bitwig-nitro-tools"
+Repository = "https://github.com/blakebratcher/bitwig-nitro-tools"
+
+[project.scripts]
+nitro-decompile = "bitwig_nitro.cli.decompile:main"
+nitro-extract-keys = "bitwig_nitro.cli.extract_keys:main"
+nitro-decrypt-corpus = "bitwig_nitro.cli.decrypt_corpus:main"
+nitro-build-atlas = "bitwig_nitro.cli.build_atlas:main"
+nitro-build-ast-tables = "bitwig_nitro.cli.build_ast_tables:main"
+nitro-validate = "bitwig_nitro.cli.validate:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+bitwig_nitro = ["data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

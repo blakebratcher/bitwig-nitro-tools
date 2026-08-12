@@ -1,0 +1,38 @@
+# --- Extracted keys and decrypted Bitwig content: NEVER commit these ---
+# The project ships no keys and no Bitwig source. Anything below is derived
+# from your own local Bitwig install and must stay on your machine.
+keys.json
+nitro-key-dump.json
+*.dec
+/corpus/
+/atlas/
+
+# --- Python ---
+.venv*/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+wheels/
+*.egg
+pip-wheel-metadata/
+
+# --- Test / tooling caches ---
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+
+# --- Editors / OS ---
+.idea/
+.vscode/
+*.swp
+.DS_Store

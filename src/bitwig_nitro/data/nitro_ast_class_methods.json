@@ -1,0 +1,3212 @@
+{
+  "_schema": {
+    "tag_byte": "from nitro_ast_tags.json",
+    "deserialize_via": "constructor_AHs | singleton_getInstance | unknown",
+    "super_class": "fully qualified Java superclass",
+    "read_sequence": "ordered list of {op, ahs_method/t3a_method, ret_type, expected_type?, stored_to?, args_descriptor?}",
+    "is_also_singleton": "constructor classes that ALSO expose getInstance(), rare",
+    "ctor_ops_count": "number of operations in the constructor body (for triage)"
+  },
+  "_source": {
+    "extracted_from": "bitwig.jar (com/bitwig/nitro)",
+    "tags_input": "bitwig_nitro/data/nitro_ast_tags.json",
+    "extraction_script": "bitwig_nitro/cli/build_ast_tables.py (nitro-build-ast-tables)",
+    "phase": "Nitro Decompiler v1, Phase B",
+    "ahs_api_assumption": {
+      "mCB:()Lcom/bitwig/nitro/BxQ;": [
+        "read_node",
+        "BxQ"
+      ],
+      "vE:()Lcom/bitwig/nitro/BxQ;": [
+        "read_node_inner",
+        "BxQ"
+      ],
+      "cL1:()J": [
+        "read_long",
+        "long"
+      ],
+      "agn:()D": [
+        "read_double",
+        "double"
+      ],
+      "jUU:()Z": [
+        "read_bool",
+        "boolean"
+      ],
+      "QOE:()Ljava/lang/String;": [
+        "read_string",
+        "String"
+      ],
+      "KJT:()Ljava/lang/String;": [
+        "read_string_v2",
+        "String"
+      ],
+      "it:()[Ljava/lang/String;": [
+        "read_string_array",
+        "String[]"
+      ],
+      "fVP:()Ljava/util/List;": [
+        "read_list",
+        "List"
+      ],
+      "zc2:()Ljava/util/List;": [
+        "read_list_v2",
+        "List"
+      ],
+      "mCB:(S)Lcom/bitwig/nitro/BxQ;": [
+        "dispatch_tag",
+        "BxQ"
+      ]
+    }
+  },
+  "_stats": {
+    "total_classes_inspected": 148,
+    "constructor_ahs": 133,
+    "singleton_get_instance": 15,
+    "unknown": 0,
+    "total_read_ops": 356,
+    "avg_ops_per_ctor": 2.68
+  },
+  "classes": {
+    "ARShiftExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.BinaryExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x4B"
+    },
+    "AddExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.BinaryExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x73"
+    },
+    "AddReduceExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.ReduceExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x88"
+    },
+    "AddressOfExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.UnaryExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x90"
+    },
+    "AlignAsSpecifier": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Specifier",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x8C"
+    },
+    "AndAndExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.LogicalExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x58"
+    },
+    "AndAndReduceExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.ReduceExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x86"
+    },
+    "AndExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.BinaryExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x5A"
+    },
+    "Annotation": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.BxQ",
+      "read_sequence": [
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/lang/String;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x6B"
+    },
+    "ArrayAccessExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Expression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x66"
+    },
+    "ArrayFillExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Expression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x68"
+    },
+    "ArrayType": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.SequentialType",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Type;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x28"
+    },
+    "ArrayValueExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.ValueExpression",
+      "read_sequence": [
+        {
+          "op": "read_list",
+          "ahs_method": "fVP:()Ljava/util/List;",
+          "ret_type": "List"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/util/List;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x65"
+    },
+    "AssertStatement": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Statement",
+      "read_sequence": [
+        {
+          "op": "super_init",
+          "args_descriptor": ""
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression",
+          "stored_to": {
+            "field": "mCB",
+            "type": "Lcom/bitwig/nitro/Expression;"
+          }
+        },
+        {
+          "op": "read_node_inner",
+          "ahs_method": "vE:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression",
+          "stored_to": {
+            "field": "fVP",
+            "type": "Lcom/bitwig/nitro/Expression;"
+          }
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x2D"
+    },
+    "AssignStatement": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Statement",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_bool",
+          "ahs_method": "jUU:()Z",
+          "ret_type": "boolean"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;Z"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 4,
+      "tag_byte": "0x35"
+    },
+    "BangExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.UnaryExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x45"
+    },
+    "BitCastExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Expression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Type;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x7F"
+    },
+    "BlockStatement": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Statement",
+      "read_sequence": [
+        {
+          "op": "read_list",
+          "ahs_method": "fVP:()Ljava/util/List;",
+          "ret_type": "List"
+        },
+        {
+          "op": "read_list",
+          "ahs_method": "fVP:()Ljava/util/List;",
+          "ret_type": "List"
+        },
+        {
+          "op": "read_list",
+          "ahs_method": "fVP:()Ljava/util/List;",
+          "ret_type": "List"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/util/List;Ljava/util/List;Ljava/util/List;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 4,
+      "tag_byte": "0x30"
+    },
+    "BooleanType": {
+      "deserialize_via": "singleton_getInstance",
+      "super_class": "com.bitwig.nitro.NumberType",
+      "read_sequence": [],
+      "is_also_singleton": true,
+      "tag_byte": "0x1C"
+    },
+    "BooleanValueExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.NumberValueExpression",
+      "read_sequence": [
+        {
+          "op": "read_bool",
+          "ahs_method": "jUU:()Z",
+          "ret_type": "boolean"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Z"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x61"
+    },
+    "BreakStatement": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Statement",
+      "read_sequence": [
+        {
+          "op": "super_init",
+          "args_descriptor": ""
+        },
+        {
+          "op": "read_long",
+          "ahs_method": "cL1:()J",
+          "ret_type": "long",
+          "stored_to": {
+            "field": "mCB",
+            "type": "J"
+          }
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x36"
+    },
+    "CallExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Expression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_list",
+          "ahs_method": "fVP:()Ljava/util/List;",
+          "ret_type": "List"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Ljava/util/List;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x3E"
+    },
+    "CaseStatement": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.AbstractCaseStatement",
+      "read_sequence": [
+        {
+          "op": "read_list",
+          "ahs_method": "fVP:()Ljava/util/List;",
+          "ret_type": "List"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.BlockStatement"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/util/List;Lcom/bitwig/nitro/BlockStatement;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x37"
+    },
+    "CastExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.UnaryExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "read_bool",
+          "ahs_method": "jUU:()Z",
+          "ret_type": "boolean"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Type;Z"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 4,
+      "tag_byte": "0x48"
+    },
+    "ComponentDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "read_list",
+          "ahs_method": "fVP:()Ljava/util/List;",
+          "ret_type": "List"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/lang/String;Ljava/util/List;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x00"
+    },
+    "CompressAnnotation": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Annotation",
+      "read_sequence": [
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "read_string_v2",
+          "ahs_method": "KJT:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/lang/String;Ljava/lang/String;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 4,
+      "tag_byte": "0x82"
+    },
+    "ConditionalExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Expression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 4,
+      "tag_byte": "0x40"
+    },
+    "ConstExprSpecifier": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Specifier",
+      "read_sequence": [
+        {
+          "op": "super_init",
+          "args_descriptor": ""
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 1,
+      "tag_byte": "0x95"
+    },
+    "ConstSpecifier": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Specifier",
+      "read_sequence": [
+        {
+          "op": "super_init",
+          "args_descriptor": ""
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 1,
+      "tag_byte": "0x8B"
+    },
+    "ConstantDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Type;Ljava/lang/String;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 4,
+      "tag_byte": "0x07"
+    },
+    "ConstantStringDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/lang/String;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x0E"
+    },
+    "ContinueStatement": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Statement",
+      "read_sequence": [
+        {
+          "op": "super_init",
+          "args_descriptor": ""
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 1,
+      "tag_byte": "0x3D"
+    },
+    "DefaultCaseStatement": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.AbstractCaseStatement",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.BlockStatement"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/BlockStatement;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x38"
+    },
+    "DivExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.BinaryExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x50"
+    },
+    "DoWhileStatement": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Statement",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Statement"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Statement;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x34"
+    },
+    "EmptyStatement": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Statement",
+      "read_sequence": [
+        {
+          "op": "super_init",
+          "args_descriptor": ""
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 1,
+      "tag_byte": "0x2F"
+    },
+    "EnumDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "read_list",
+          "ahs_method": "fVP:()Ljava/util/List;",
+          "ret_type": "List"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/lang/String;Lcom/bitwig/nitro/Type;Ljava/util/List;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 4,
+      "tag_byte": "0x0B"
+    },
+    "EnumEntryDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "read_node_inner",
+          "ahs_method": "vE:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/lang/String;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x72"
+    },
+    "EnumType": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Type",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.EnumDeclaration"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/EnumDeclaration;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x18"
+    },
+    "EnumValueExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Expression",
+      "read_sequence": [
+        {
+          "op": "super_init",
+          "args_descriptor": ""
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 1,
+      "tag_byte": "0x80"
+    },
+    "EqExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.ComparisonExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x52"
+    },
+    "Float32Type": {
+      "deserialize_via": "singleton_getInstance",
+      "super_class": "com.bitwig.nitro.FloatType",
+      "read_sequence": [],
+      "is_also_singleton": true,
+      "tag_byte": "0x25"
+    },
+    "Float64Type": {
+      "deserialize_via": "singleton_getInstance",
+      "super_class": "com.bitwig.nitro.FloatType",
+      "read_sequence": [],
+      "is_also_singleton": true,
+      "tag_byte": "0x26"
+    },
+    "FloatLiteralType": {
+      "deserialize_via": "singleton_getInstance",
+      "super_class": "com.bitwig.nitro.FloatType",
+      "read_sequence": [],
+      "is_also_singleton": true,
+      "tag_byte": "0x75"
+    },
+    "FloatValueExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.NumberValueExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.FloatType"
+        },
+        {
+          "op": "read_double",
+          "ahs_method": "agn:()D",
+          "ret_type": "double"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/FloatType;D"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x63"
+    },
+    "ForStatement": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Statement",
+      "read_sequence": [
+        {
+          "op": "read_node_inner",
+          "ahs_method": "vE:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.VariableDeclaration"
+        },
+        {
+          "op": "read_node_inner",
+          "ahs_method": "vE:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.AssignStatement"
+        },
+        {
+          "op": "read_node_inner",
+          "ahs_method": "vE:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node_inner",
+          "ahs_method": "vE:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node_inner",
+          "ahs_method": "vE:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Statement"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/VariableDeclaration;Lcom/bitwig/nitro/AssignStatement;Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Statement;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 6,
+      "tag_byte": "0x39"
+    },
+    "FunctionArgumentDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Type;Ljava/lang/String;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x0D"
+    },
+    "FunctionDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "read_list",
+          "ahs_method": "fVP:()Ljava/util/List;",
+          "ret_type": "List"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.BlockStatement"
+        },
+        {
+          "op": "read_bool",
+          "ahs_method": "jUU:()Z",
+          "ret_type": "boolean"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/lang/String;Lcom/bitwig/nitro/Type;Ljava/util/List;Lcom/bitwig/nitro/BlockStatement;Z"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 6,
+      "tag_byte": "0x06"
+    },
+    "FunctionType": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Type",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "read_list",
+          "ahs_method": "fVP:()Ljava/util/List;",
+          "ret_type": "List"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Type;Ljava/util/List;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x1A"
+    },
+    "GEqExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.ComparisonExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x57"
+    },
+    "GTExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.ComparisonExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x53"
+    },
+    "IdentifierExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Expression",
+      "read_sequence": [
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/lang/String;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x5D"
+    },
+    "IfStatement": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Statement",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Statement"
+        },
+        {
+          "op": "read_node_inner",
+          "ahs_method": "vE:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Statement"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Statement;Lcom/bitwig/nitro/Statement;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 4,
+      "tag_byte": "0x3A"
+    },
+    "ImportDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "super_init",
+          "args_descriptor": ""
+        },
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String",
+          "stored_to": {
+            "field": "mCB",
+            "type": "Ljava/lang/String;"
+          }
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x15"
+    },
+    "InitBlockDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.BlockStatement"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/BlockStatement;"
+        },
+        {
+          "op": "read_bool",
+          "ahs_method": "jUU:()Z",
+          "ret_type": "boolean"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x11"
+    },
+    "InputAudioPortType": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.AudioPortType",
+      "read_sequence": [
+        {
+          "op": "read_node_inner",
+          "ahs_method": "vE:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Type;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x7A"
+    },
+    "InputEventPortType": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.EventPortType",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Type;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x76"
+    },
+    "InputValuePortType": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.ValuePortType",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Type;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x78"
+    },
+    "Int16Type": {
+      "deserialize_via": "singleton_getInstance",
+      "super_class": "com.bitwig.nitro.IntegerType",
+      "read_sequence": [],
+      "is_also_singleton": true,
+      "tag_byte": "0x1F"
+    },
+    "Int32Type": {
+      "deserialize_via": "singleton_getInstance",
+      "super_class": "com.bitwig.nitro.IntegerType",
+      "read_sequence": [],
+      "is_also_singleton": true,
+      "tag_byte": "0x21"
+    },
+    "Int64Type": {
+      "deserialize_via": "singleton_getInstance",
+      "super_class": "com.bitwig.nitro.IntegerType",
+      "read_sequence": [],
+      "is_also_singleton": true,
+      "tag_byte": "0x23"
+    },
+    "Int8Type": {
+      "deserialize_via": "singleton_getInstance",
+      "super_class": "com.bitwig.nitro.IntegerType",
+      "read_sequence": [],
+      "is_also_singleton": true,
+      "tag_byte": "0x1D"
+    },
+    "IntegerLiteralType": {
+      "deserialize_via": "singleton_getInstance",
+      "super_class": "com.bitwig.nitro.IntegerType",
+      "read_sequence": [],
+      "is_also_singleton": true,
+      "tag_byte": "0x74"
+    },
+    "IntegerValueExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.NumberValueExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.IntegerType"
+        },
+        {
+          "op": "read_long",
+          "ahs_method": "cL1:()J",
+          "ret_type": "long"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/IntegerType;J"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x62"
+    },
+    "IsFpClassExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.UnaryExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_long",
+          "ahs_method": "cL1:()J",
+          "ret_type": "long"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;I"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x92"
+    },
+    "LEqExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.ComparisonExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x54"
+    },
+    "LRShiftExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.BinaryExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x4F"
+    },
+    "LShiftExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.BinaryExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x4E"
+    },
+    "LTExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.ComparisonExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x55"
+    },
+    "LikelyExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Expression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x94"
+    },
+    "MacroCallExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Expression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_list",
+          "ahs_method": "fVP:()Ljava/util/List;",
+          "ret_type": "List"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Ljava/util/List;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x4A"
+    },
+    "MacroDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "read_list_v2",
+          "ahs_method": "zc2:()Ljava/util/List;",
+          "ret_type": "List"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Statement"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/lang/String;Ljava/util/List;Lcom/bitwig/nitro/Statement;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 4,
+      "tag_byte": "0x16"
+    },
+    "MaxAnnotation": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Annotation",
+      "read_sequence": [
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/lang/String;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x6D"
+    },
+    "MemberAccessExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Expression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Ljava/lang/String;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x69"
+    },
+    "MinAnnotation": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Annotation",
+      "read_sequence": [
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/lang/String;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x6E"
+    },
+    "ModExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.BinaryExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x51"
+    },
+    "MonoSpecifier": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Specifier",
+      "read_sequence": [
+        {
+          "op": "super_init",
+          "args_descriptor": ""
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 1,
+      "tag_byte": "0x8D"
+    },
+    "MulExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.BinaryExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x5C"
+    },
+    "MulReduceExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.ReduceExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x89"
+    },
+    "NEqExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.ComparisonExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x56"
+    },
+    "NamedType": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Type",
+      "read_sequence": [
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/lang/String;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x2A"
+    },
+    "NitroFile": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.BxQ",
+      "read_sequence": [
+        {
+          "op": "read_list",
+          "ahs_method": "fVP:()Ljava/util/List;",
+          "ret_type": "List"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/util/List;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x6F"
+    },
+    "NotExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.UnaryExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x47"
+    },
+    "NullPointerExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Expression",
+      "read_sequence": [
+        {
+          "op": "super_init",
+          "args_descriptor": ""
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 1,
+      "tag_byte": "0x8F"
+    },
+    "OrExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.BinaryExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x4C"
+    },
+    "OrOrExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.LogicalExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x59"
+    },
+    "OrOrReduceExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.ReduceExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x87"
+    },
+    "OutputAudioPortType": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.AudioPortType",
+      "read_sequence": [
+        {
+          "op": "read_node_inner",
+          "ahs_method": "vE:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Type;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x7B"
+    },
+    "OutputEventPortType": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.EventPortType",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Type;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x77"
+    },
+    "OutputValuePortType": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.ValuePortType",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Type;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x79"
+    },
+    "PointerDereferenceExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.UnaryExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x8E"
+    },
+    "PointerType": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.SequentialType",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "read_bool",
+          "ahs_method": "jUU:()Z",
+          "ret_type": "boolean"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Type;Z"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x27"
+    },
+    "PortDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.PortType"
+        },
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/PortType;Ljava/lang/String;"
+        },
+        {
+          "op": "read_node_inner",
+          "ahs_method": "vE:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_string_v2",
+          "ahs_method": "KJT:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "read_node_inner",
+          "ahs_method": "vE:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.BlockStatement"
+        },
+        {
+          "op": "read_node_inner",
+          "ahs_method": "vE:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 7,
+      "tag_byte": "0x09"
+    },
+    "PostDecrementExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.IncrementExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x44"
+    },
+    "PostEventsBlockDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.BlockStatement"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/BlockStatement;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x08"
+    },
+    "PostIncrementExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.IncrementExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x42"
+    },
+    "PostProcessBlockDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.BlockStatement"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/BlockStatement;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x7E"
+    },
+    "PreDecrementExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.IncrementExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x43"
+    },
+    "PreIncrementExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.IncrementExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x41"
+    },
+    "PreProcessBlockDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.BlockStatement"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/BlockStatement;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x85"
+    },
+    "PrintlnStatement": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Statement",
+      "read_sequence": [
+        {
+          "op": "read_list",
+          "ahs_method": "fVP:()Ljava/util/List;",
+          "ret_type": "List"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/util/List;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x91"
+    },
+    "ProcessBlockDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.BlockStatement"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/BlockStatement;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x03"
+    },
+    "PropertyDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/lang/String;Lcom/bitwig/nitro/Type;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 4,
+      "tag_byte": "0x0C"
+    },
+    "ReferenceType": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Type",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "read_bool",
+          "ahs_method": "jUU:()Z",
+          "ret_type": "boolean"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Type;Z"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x7C"
+    },
+    "ResetBlockDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.BlockStatement"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/BlockStatement;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x93"
+    },
+    "ReturnStatement": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Statement",
+      "read_sequence": [
+        {
+          "op": "read_node_inner",
+          "ahs_method": "vE:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x3B"
+    },
+    "SelectExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Expression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 4,
+      "tag_byte": "0x6A"
+    },
+    "SendEmplaceStatement": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.BasicSendStatement",
+      "read_sequence": [
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "read_node_inner",
+          "ahs_method": "vE:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "read_node_inner",
+          "ahs_method": "vE:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.BlockStatement"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/lang/String;Lcom/bitwig/nitro/Expression;Ljava/lang/String;Lcom/bitwig/nitro/BlockStatement;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 5,
+      "tag_byte": "0x32"
+    },
+    "SendStatement": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.BasicSendStatement",
+      "read_sequence": [
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "read_node_inner",
+          "ahs_method": "vE:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/lang/String;Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;Z"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 4,
+      "tag_byte": "0x31"
+    },
+    "ShouldProcessBlockDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.BlockStatement"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/BlockStatement;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x14"
+    },
+    "ShuffleVectorExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Expression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_list",
+          "ahs_method": "fVP:()Ljava/util/List;",
+          "ret_type": "List"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;Ljava/util/List;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 4,
+      "tag_byte": "0x3F"
+    },
+    "SizeofTypeExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Expression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Type;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x49"
+    },
+    "StartBlockDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.BlockStatement"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/BlockStatement;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x0A"
+    },
+    "StaticAssertDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x02"
+    },
+    "StaticAssertStatement": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Statement",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x83"
+    },
+    "StaticSpecifier": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Specifier",
+      "read_sequence": [
+        {
+          "op": "super_init",
+          "args_descriptor": ""
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 1,
+      "tag_byte": "0x8A"
+    },
+    "StopBlockDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.BlockStatement"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/BlockStatement;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x12"
+    },
+    "StringAnnotation": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Annotation",
+      "read_sequence": [
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/lang/String;Ljava/lang/String;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x6C"
+    },
+    "StringType": {
+      "deserialize_via": "singleton_getInstance",
+      "super_class": "com.bitwig.nitro.Type",
+      "read_sequence": [],
+      "is_also_singleton": true,
+      "tag_byte": "0x19"
+    },
+    "StringValueExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.ValueExpression",
+      "read_sequence": [
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/lang/String;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x5E"
+    },
+    "StructureDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "read_list",
+          "ahs_method": "fVP:()Ljava/util/List;",
+          "ret_type": "List"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/lang/String;Ljava/util/List;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x01"
+    },
+    "SubExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.BinaryExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x5B"
+    },
+    "SwitchStatement": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Statement",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_list",
+          "ahs_method": "fVP:()Ljava/util/List;",
+          "ret_type": "List"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Ljava/util/List;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x3C"
+    },
+    "TemplateDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_list",
+          "ahs_method": "fVP:()Ljava/util/List;",
+          "ret_type": "List"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Declaration"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/util/List;Lcom/bitwig/nitro/Declaration;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x17"
+    },
+    "TemplateInstanceExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Expression",
+      "read_sequence": [
+        {
+          "op": "super_init",
+          "args_descriptor": ""
+        },
+        {
+          "op": "store_field",
+          "field": "vE",
+          "type": "Lcom/bitwig/nitro/Expression;"
+        },
+        {
+          "op": "store_field",
+          "field": "QOE",
+          "type": "Lcom/bitwig/nitro/TemplateDeclaration;"
+        },
+        {
+          "op": "store_field",
+          "field": "KJT",
+          "type": "Lcom/bitwig/nitro/Declaration;"
+        },
+        {
+          "op": "read_node_inner",
+          "ahs_method": "vE:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression",
+          "stored_to": {
+            "field": "vE",
+            "type": "Lcom/bitwig/nitro/Expression;"
+          }
+        },
+        {
+          "op": "read_node_inner",
+          "ahs_method": "vE:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.TemplateDeclaration",
+          "stored_to": {
+            "field": "QOE",
+            "type": "Lcom/bitwig/nitro/TemplateDeclaration;"
+          }
+        },
+        {
+          "op": "read_list",
+          "ahs_method": "fVP:()Ljava/util/List;",
+          "ret_type": "List",
+          "stored_to": {
+            "field": "fVP",
+            "type": "Ljava/util/List;"
+          }
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 7,
+      "tag_byte": "0x67"
+    },
+    "TemplateInstanceType": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Type",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.TemplateInstanceExpression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/TemplateInstanceExpression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x2B"
+    },
+    "TemplateTypeParameter": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.TemplateParameter",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Type;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x70"
+    },
+    "TemplateTypeParameterDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.TemplateParameterDeclaration",
+      "read_sequence": [
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/lang/String;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x10"
+    },
+    "TemplateValueParameter": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.TemplateParameter",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x71"
+    },
+    "TemplateValueParameterDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.TemplateParameterDeclaration",
+      "read_sequence": [
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/lang/String;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x0F"
+    },
+    "TrapStatement": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Statement",
+      "read_sequence": [
+        {
+          "op": "super_init",
+          "args_descriptor": "Z"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 1,
+      "tag_byte": "0x2E"
+    },
+    "TriggerSendStatement": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.BasicSendStatement",
+      "read_sequence": [
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "read_node_inner",
+          "ahs_method": "vE:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/lang/String;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x33"
+    },
+    "TypeAliasDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/lang/String;Lcom/bitwig/nitro/Type;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x05"
+    },
+    "TypeDereferenceType": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Type",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Type;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x7D"
+    },
+    "TypeSwitchType": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Type",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_list",
+          "ahs_method": "fVP:()Ljava/util/List;",
+          "ret_type": "List"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Ljava/util/List;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x81"
+    },
+    "TypeValueExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.ValueExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Type;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x5F"
+    },
+    "UInt16Type": {
+      "deserialize_via": "singleton_getInstance",
+      "super_class": "com.bitwig.nitro.IntegerType",
+      "read_sequence": [],
+      "is_also_singleton": true,
+      "tag_byte": "0x20"
+    },
+    "UInt32Type": {
+      "deserialize_via": "singleton_getInstance",
+      "super_class": "com.bitwig.nitro.IntegerType",
+      "read_sequence": [],
+      "is_also_singleton": true,
+      "tag_byte": "0x22"
+    },
+    "UInt64Type": {
+      "deserialize_via": "singleton_getInstance",
+      "super_class": "com.bitwig.nitro.IntegerType",
+      "read_sequence": [],
+      "is_also_singleton": true,
+      "tag_byte": "0x24"
+    },
+    "UInt8Type": {
+      "deserialize_via": "singleton_getInstance",
+      "super_class": "com.bitwig.nitro.IntegerType",
+      "read_sequence": [],
+      "is_also_singleton": true,
+      "tag_byte": "0x1E"
+    },
+    "UnaryMinusExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.UnaryExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x46"
+    },
+    "VariableDeclaration": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Declaration",
+      "read_sequence": [
+        {
+          "op": "read_list",
+          "ahs_method": "fVP:()Ljava/util/List;",
+          "ret_type": "List"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "read_string",
+          "ahs_method": "QOE:()Ljava/lang/String;",
+          "ret_type": "String"
+        },
+        {
+          "op": "read_node_inner",
+          "ahs_method": "vE:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/util/List;Lcom/bitwig/nitro/Type;Ljava/lang/String;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 5,
+      "tag_byte": "0x04"
+    },
+    "VectorType": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.SequentialType",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Type"
+        },
+        {
+          "op": "read_node_inner",
+          "ahs_method": "vE:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Type;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x29"
+    },
+    "VectorValueExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.ValueExpression",
+      "read_sequence": [
+        {
+          "op": "read_list",
+          "ahs_method": "fVP:()Ljava/util/List;",
+          "ret_type": "List"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Ljava/util/List;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 2,
+      "tag_byte": "0x60"
+    },
+    "VoidType": {
+      "deserialize_via": "singleton_getInstance",
+      "super_class": "com.bitwig.nitro.Type",
+      "read_sequence": [],
+      "is_also_singleton": true,
+      "tag_byte": "0x1B"
+    },
+    "WhileStatement": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.Statement",
+      "read_sequence": [
+        {
+          "op": "super_init",
+          "args_descriptor": ""
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression",
+          "stored_to": {
+            "field": "vE",
+            "type": "Lcom/bitwig/nitro/Expression;"
+          }
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Statement",
+          "stored_to": {
+            "field": "fVP",
+            "type": "Lcom/bitwig/nitro/Statement;"
+          }
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x2C"
+    },
+    "XorExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.BinaryExpression",
+      "read_sequence": [
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "read_node",
+          "ahs_method": "mCB:()Lcom/bitwig/nitro/BxQ;",
+          "ret_type": "BxQ",
+          "expected_type": "com.bitwig.nitro.Expression"
+        },
+        {
+          "op": "super_init",
+          "args_descriptor": "Lcom/bitwig/nitro/Expression;Lcom/bitwig/nitro/Expression;"
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 3,
+      "tag_byte": "0x4D"
+    },
+    "ZeroInitValueExpression": {
+      "deserialize_via": "constructor_AHs",
+      "super_class": "com.bitwig.nitro.ValueExpression",
+      "read_sequence": [
+        {
+          "op": "super_init",
+          "args_descriptor": ""
+        }
+      ],
+      "is_also_singleton": false,
+      "ctor_ops_count": 1,
+      "tag_byte": "0x84"
+    }
+  }
+}
