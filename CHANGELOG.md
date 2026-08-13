@@ -6,6 +6,21 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+- **`nitro-std` stdlib source decryption** via a new bundled controller,
+  **Nitro Std Dump** (`BitwigNitroStdDump.control.js`), and the
+  `nitro-decrypt-std` CLI. Unlike `nitro-image` (offline, self-inverse Dag
+  cipher), each `nitro-std` member is wrapped in a runtime PRNG stream cipher
+  that is not reproducible offline; the controller decrypts the whole archive
+  inside a live Bitwig JVM — via `NitroFile`'s `(ctx, byte[]) -> java.io.Reader`
+  source-decrypt method, discovered by shape — and writes the plaintext tree to
+  your disk. `nitro-decrypt-std --install-controller` copies it in;
+  `nitro-decrypt-std` verifies + reports the result. New path resolvers:
+  `nitro_std_install_path`, `nitro_std_output_dir`, `nitro_std_manifest_path`.
+  Ships no keys and no decrypted content. Decrypt mechanism verified on
+  Bitwig 6.0.11 (121/121 members).
+
 ## [0.1.1] - 2026-08-12
 
 ### Added

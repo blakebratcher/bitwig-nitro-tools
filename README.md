@@ -60,6 +60,12 @@ nitro-decrypt-corpus
 
 # 3. read a module
 nitro-decompile filter/SallenKey
+
+# (optional) decrypt the nitro-std stdlib SOURCE. Unlike nitro-image it needs a
+# live JVM (runtime PRNG cipher), so it runs via its own bundled controller:
+nitro-decrypt-std --install-controller    # copy the controller into Bitwig
+#    then add "Nitro Std Dump" in Bitwig -> Settings -> Controllers, and:
+nitro-decrypt-std                          # verify + report the decrypted tree
 ```
 
 ![Adding the bundled "Nitro Key Dump" controller in Bitwig's Settings → Controllers: pick vendor bitwig-nitro-tools, product Nitro Key Dump, and Add](assets/add-controller.png)
@@ -175,8 +181,15 @@ A few things that surfaced while reverse-engineering the format:
   byte-exact offline, but whether Bitwig loads your repack is one restart-gated
   experiment that this project does not perform for you. Keep a verified backup
   of the original image before writing to your install.
-- **`nitro-std` (stdlib source) is not covered offline.** Only `nitro-image`
-  (the compiled modules) decrypts with the documented recipe.
+- **`nitro-std` (stdlib source) needs a live JVM — not offline.** The compiled
+  `nitro-image` modules decrypt fully offline (self-inverse Dag/XOR cipher). The
+  `nitro-std` *source* archive is different: each member is wrapped in a runtime
+  PRNG stream cipher that is not reproducible offline, so it is decrypted inside
+  a running Bitwig via the bundled **Nitro Std Dump** controller
+  (`nitro-decrypt-std`), which walks the archive through
+  `NitroFile`'s `(ctx, byte[]) -> java.io.Reader` source-decrypt method and
+  writes the plaintext tree to your disk. The decrypt mechanism is verified on
+  Bitwig 6.0.11 (121/121 members).
 - **`0004` document files decrypt at the metadata level.** The Dag key opens
   the readable metadata; a file body may sit behind a further layer this key
   does not open.

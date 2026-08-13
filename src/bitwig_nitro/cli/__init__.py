@@ -10,6 +10,7 @@ nitro-decompile       ``decompile.main``
 nitro-validate        ``validate.main``
 nitro-extract-keys    ``extract_keys.main``
 nitro-decrypt-corpus  ``decrypt_corpus.main``
+nitro-decrypt-std     ``decrypt_std.main``
 nitro-build-atlas     ``build_atlas.main``
 nitro-build-ast-tables ``build_ast_tables.main``
 ===================== ==============================

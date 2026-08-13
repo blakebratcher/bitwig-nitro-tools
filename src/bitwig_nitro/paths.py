@@ -25,6 +25,9 @@ __all__ = [
     "packaged_data_dir",
     "bitwig_install_roots",
     "nitro_image_install_path",
+    "nitro_std_install_path",
+    "nitro_std_output_dir",
+    "nitro_std_manifest_path",
     "user_config_dir",
     "keys_search_paths",
     "local_output_dir",
@@ -33,6 +36,9 @@ __all__ = [
 
 NITRO_IMAGE_FILENAME = "nitro-image"
 """Bitwig's DSP archive filename, found under ``<root>/nitro-image``."""
+
+NITRO_STD_FILENAME = "nitro-std"
+"""Bitwig's stdlib *source* archive, found under ``<root>/nitro-std``."""
 
 _ON_WINDOWS = os.name == "nt"
 _ON_MACOS = sys.platform == "darwin"
@@ -133,6 +139,48 @@ def nitro_image_install_path() -> Path | None:
         if candidate.exists():
             return candidate
     return None
+
+
+def nitro_std_install_path() -> Path | None:
+    """Return the first existing ``<root>/nitro-std``, or ``None``.
+
+    ``$BITWIG_NITRO_STD`` (a full path to the nitro-std file) wins when set and
+    existing. Mirrors the ``BitwigNitroStdDump`` controller's own lookup so both
+    sides agree on which archive is decrypted.
+    """
+    override = os.environ.get("BITWIG_NITRO_STD", "")
+    if override:
+        p = Path(override)
+        return p if p.exists() else None
+    for root in bitwig_install_roots():
+        candidate = root / NITRO_STD_FILENAME
+        if candidate.exists():
+            return candidate
+    return None
+
+
+def nitro_std_output_dir() -> Path:
+    """Resolve the decrypted-nitro-std output directory the controller writes to.
+
+    ``$BITWIG_NITRO_STD_OUT`` wins when set; otherwise
+    ``~/.bitwig-nitro/nitro-std-decrypted``.
+    """
+    override = os.environ.get("BITWIG_NITRO_STD_OUT", "")
+    if override:
+        return Path(override)
+    return Path.home() / ".bitwig-nitro" / "nitro-std-decrypted"
+
+
+def nitro_std_manifest_path() -> Path:
+    """Resolve the nitro-std dump manifest path the controller writes.
+
+    ``$BITWIG_NITRO_STD_DUMP`` wins when set; otherwise
+    ``~/.bitwig-nitro/nitro-std-dump.json``.
+    """
+    override = os.environ.get("BITWIG_NITRO_STD_DUMP", "")
+    if override:
+        return Path(override)
+    return Path.home() / ".bitwig-nitro" / "nitro-std-dump.json"
 
 
 def user_config_dir() -> Path:
