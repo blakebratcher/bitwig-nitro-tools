@@ -9,7 +9,7 @@ requires keys you extract from your own Bitwig installation, see
 """
 from __future__ import annotations
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 # dag_cipher
 from .dag_cipher import dag_decrypt, decrypt_0004, read_encrypted_btwg

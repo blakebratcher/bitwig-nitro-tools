@@ -6,6 +6,8 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-08-12
+
 ### Added
 
 - **`nitro-std` stdlib source decryption** via a new bundled controller,
@@ -116,6 +118,7 @@ Bitwig's Nitro DSP binary format, offline, on your own machine.
 - The project redistributes no Bitwig cipher keys and no decrypted Bitwig
   content. Decryption is bring-your-own-install.
 
-[Unreleased]: https://github.com/blakebratcher/bitwig-nitro-tools/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/blakebratcher/bitwig-nitro-tools/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/blakebratcher/bitwig-nitro-tools/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/blakebratcher/bitwig-nitro-tools/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/blakebratcher/bitwig-nitro-tools/releases/tag/v0.1.0
