@@ -11,6 +11,7 @@ from __future__ import annotations
 import io
 import os
 import zipfile
+from pathlib import Path
 
 import pytest
 
@@ -156,3 +157,31 @@ def test_real_install_image_parses() -> None:
     img = NitroImage.load()
     assert len(img) > 0
     assert all(name for name in img.names())
+
+
+def test_install_guard_covers_library_parent(monkeypatch) -> None:
+    """The write guard refuses the install directory itself, not only paths under
+    ``<install>/Library``. ``bitwig_install_roots()`` yields Library paths, so a
+    sibling of ``Library`` inside the install must be refused too."""
+    from bitwig_nitro import paths as bnp
+
+    lib = Path("/opt/bitwig-studio/Library")
+    monkeypatch.setattr(bnp, "bitwig_install_roots", lambda: [lib])
+
+    assert ni.is_inside_install(lib)                  # the Library root
+    assert ni.is_inside_install(lib / "nitro-image")  # under Library
+    assert ni.is_inside_install(lib.parent)           # the install dir itself
+    assert ni.is_inside_install(lib.parent / "other")  # sibling of Library (new)
+    assert not ni.is_inside_install(Path("/opt/somewhere-else"))
+
+
+def test_install_guard_skips_filesystem_anchor(monkeypatch) -> None:
+    """A degenerate bare ``/Library`` root must not make the guard swallow the
+    whole filesystem: its parent is ``/`` (a filesystem anchor) and is skipped."""
+    from bitwig_nitro import paths as bnp
+
+    monkeypatch.setattr(bnp, "bitwig_install_roots", lambda: [Path("/Library")])
+
+    assert ni.is_inside_install(Path("/Library/x"))          # under the root
+    assert not ni.is_inside_install(Path("/etc/passwd"))     # not swallowed by "/"
+    assert not ni.is_inside_install(Path("/opt/anything"))

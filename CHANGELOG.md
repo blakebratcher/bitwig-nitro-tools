@@ -6,6 +6,8 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-08-12
+
 ### Added
 
 - **Runtime key extraction via a bundled controller.** `nitro-extract-keys
@@ -32,6 +34,17 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   The docs now describe the bundled-controller flow as the proven route, label
   live verification as the user's own step, and keep the transform-chain
   disassembly only as structure-only background.
+- Documented the `BITWIG_NITRO_CONFIG` override for the per-user config
+  directory that holds `keys.json`, in `docs/KEY_EXTRACTION.md`, the README, and
+  the `nitro-extract-keys --out` help text.
+
+### Fixed
+
+- **Write guard now covers the whole program-install directory.** `write_image`
+  refused writes under `<install>/Library` but not a sibling of `Library` inside
+  the install (for example `/opt/bitwig-studio/other`). `is_inside_install` now
+  guards each install root's parent as well, while skipping a filesystem-anchor
+  parent so a bare `/Library` root can never disable writes globally.
 
 ### Removed
 
@@ -88,5 +101,6 @@ Bitwig's Nitro DSP binary format, offline, on your own machine.
 - The project redistributes no Bitwig cipher keys and no decrypted Bitwig
   content. Decryption is bring-your-own-install.
 
-[Unreleased]: https://github.com/blakebratcher/bitwig-nitro-tools/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/blakebratcher/bitwig-nitro-tools/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/blakebratcher/bitwig-nitro-tools/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/blakebratcher/bitwig-nitro-tools/releases/tag/v0.1.0

@@ -457,12 +457,32 @@ class WriteReport:
 
 
 def _install_roots() -> list[Path]:
-    resolved = []
+    """Program-install roots the write guard refuses to write inside.
+
+    ``bitwig_install_roots()`` yields ``<install>/Library`` paths. The guard also
+    covers each Library root's parent (the program-install directory itself, e.g.
+    ``/opt/bitwig-studio``), so a path inside the install but a sibling of
+    ``Library`` is refused too. A parent that is a filesystem anchor (``/`` or a
+    drive root) is skipped, so a stray bare ``/Library`` root can never make the
+    guard swallow the whole filesystem.
+    """
+    resolved: list[Path] = []
+    seen: set[Path] = set()
+
+    def _add(p: Path) -> None:
+        if p not in seen:
+            seen.add(p)
+            resolved.append(p)
+
     for r in paths.bitwig_install_roots():
         try:
-            resolved.append(r.resolve())
+            root = r.resolve()
         except OSError:  # pragma: no cover
-            resolved.append(r)
+            root = r
+        _add(root)
+        parent = root.parent
+        if parent != parent.parent:  # not a filesystem anchor
+            _add(parent)
     return resolved
 
 
